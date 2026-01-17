@@ -18,8 +18,8 @@ const cars = [
     category: "Uber X / Comfort",
     images: [
       "/images/etioscarro.jpg",
-      "/images/Etiosinterior.jpg",
-      "/images/Etiospainel.jpg"
+      "/images/etiosinterior.jpg",
+      "/images/etiospainel.jpg"
     ],
     features: ["Conforto Premium", "Multimídia", "Direção Elétrica", "Confiável"]
   }
