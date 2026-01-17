@@ -5,20 +5,14 @@ const cars = [
   {
     name: "Renault Logan",
     category: "Uber X / Comfort",
-    img: "https://images.unsplash.com/photo-1630175860333-5131bda75071?auto=format&fit=crop&q=80&w=400",
-    features: ["4 Portas", "Ar Condicionado", "Porta-Malas Grande"]
+    img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=400",
+    features: ["4 Portas", "Ar Condicionado", "Porta-Malas Grande", "Econômico"]
   },
   {
-    name: "Fiat Cronos",
+    name: "Toyota Etios",
     category: "Uber X / Comfort",
-    img: "https://images.unsplash.com/photo-1619682817481-e99489121f82?auto=format&fit=crop&q=80&w=400",
-    features: ["Econômico", "Conforto Premium", "Multimídia"]
-  },
-  {
-    name: "Volkswagen Voyage",
-    category: "Uber X",
-    img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&q=80&w=400",
-    features: ["Direção Hidráulica", "Excelente Desempenho", "Confiável"]
+    img: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=400",
+    features: ["Conforto Premium", "Multimídia", "Direção Elétrica", "Confiável"]
   }
 ];
 
@@ -27,7 +21,7 @@ export const Fleet: React.FC = () => {
     <section id="frota" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-navy text-center mb-12">Conheça Nossa Frota</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {cars.map((car, idx) => (
             <div key={idx} className="bg-gray-50 rounded-2xl overflow-hidden shadow-lg border border-gray-100 group">
               <div className="h-48 overflow-hidden">

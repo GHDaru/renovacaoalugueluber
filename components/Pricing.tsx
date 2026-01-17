@@ -12,7 +12,7 @@ export const Pricing: React.FC = () => {
             <div className="space-y-4 mb-8">
               <div className="flex items-center space-x-3">
                 <i className="fas fa-check-circle text-gold"></i>
-                <span className="font-semibold text-lg">Caução: R$ 950,00</span>
+                <span className="font-semibold text-lg">Caução: R$ 1.500,00</span>
               </div>
               <div className="flex items-center space-x-3">
                 <i className="fas fa-check-circle text-gold"></i>
@@ -38,7 +38,7 @@ export const Pricing: React.FC = () => {
               <h3 className="text-2xl font-bold text-navy mb-4">Comece a Faturar Agora</h3>
               <p className="text-gray-600 mb-8">
                 Nossos carros são revisados e atendem a todos os requisitos da Uber e 99. 
-                O caução de R$ 950,00 é o menor do mercado para categorias superiores.
+                Oferecemos condições competitivas e veículos de qualidade para sua operação.
               </p>
               
               <div className="grid grid-cols-2 gap-4 mb-8">
