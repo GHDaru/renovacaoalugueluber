@@ -21,11 +21,11 @@ export const Footer: React.FC = () => {
               Sua ferramenta de trabalho com o melhor suporte de Curitiba.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-navy transition">
-                <i className="fab fa-instagram"></i>
+              <a href="#frota" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-navy transition">
+                <i className="fas fa-car"></i>
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-navy transition">
-                <i className="fab fa-facebook-f"></i>
+              <a href="#planos" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-gold hover:text-navy transition">
+                <i className="fas fa-tag"></i>
               </a>
             </div>
           </div>

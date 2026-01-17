@@ -39,7 +39,7 @@ export const Hero: React.FC = () => {
             <div className="relative z-10 transform md:scale-110 lg:translate-x-10">
               <img 
                 src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800" 
-                alt="Renault Logan Branco" 
+                alt="Renault Logan 2018" 
                 className="rounded-2xl shadow-2xl"
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-2xl hidden lg:block">
