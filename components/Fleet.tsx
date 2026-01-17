@@ -1,17 +1,26 @@
 
 import React from 'react';
+import { Carousel } from './Carousel';
 
 const cars = [
   {
     name: "Renault Logan",
     category: "Uber X / Comfort",
-    img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=400",
+    images: [
+      "/images/logancarro.jpg",
+      "/images/loganinterior.jpg",
+      "/images/loganpainel.jpg"
+    ],
     features: ["4 Portas", "Ar Condicionado", "Porta-Malas Grande", "Econômico"]
   },
   {
     name: "Toyota Etios",
     category: "Uber X / Comfort",
-    img: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=400",
+    images: [
+      "/images/etioscarro.jpg",
+      "/images/Etiosinterior.jpg",
+      "/images/Etiospainel.jpg"
+    ],
     features: ["Conforto Premium", "Multimídia", "Direção Elétrica", "Confiável"]
   }
 ];
@@ -24,13 +33,7 @@ export const Fleet: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {cars.map((car, idx) => (
             <div key={idx} className="bg-gray-50 rounded-2xl overflow-hidden shadow-lg border border-gray-100 group">
-              <div className="h-48 overflow-hidden">
-                <img 
-                  src={car.img} 
-                  alt={car.name} 
-                  className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
-                />
-              </div>
+              <Carousel images={car.images} alt={car.name} />
               <div className="p-6">
                 <div className="flex justify-between items-start mb-4">
                   <div>
