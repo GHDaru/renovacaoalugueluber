@@ -5,13 +5,13 @@ const cars = [
   {
     name: "Renault Logan",
     category: "Uber X / Comfort",
-    img: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=400",
+    img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=400",
     features: ["4 Portas", "Ar Condicionado", "Porta-Malas Grande", "Econômico"]
   },
   {
     name: "Toyota Etios",
     category: "Uber X / Comfort",
-    img: "https://images.unsplash.com/photo-1581540222194-0def2dda95b8?auto=format&fit=crop&q=80&w=400",
+    img: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=400",
     features: ["Conforto Premium", "Multimídia", "Direção Elétrica", "Confiável"]
   }
 ];
