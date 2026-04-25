@@ -58,5 +58,5 @@ class SQLAlchemyRenterRepository(IRenterRepository):
     async def delete(self, entity_id: uuid.UUID) -> None:
         m = await self._session.get(RenterModel, entity_id)
         if m:
-            await self._session.delete(m)
+            self._session.delete(m)
             await self._session.flush()

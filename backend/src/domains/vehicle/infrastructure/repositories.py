@@ -68,7 +68,7 @@ class SQLAlchemyVehicleRepository(IVehicleRepository):
     async def delete(self, entity_id: uuid.UUID) -> None:
         m = await self._session.get(VehicleModel, entity_id)
         if m:
-            await self._session.delete(m)
+            self._session.delete(m)
             await self._session.flush()
 
 
@@ -121,5 +121,5 @@ class SQLAlchemyVehicleDocumentRepository(IVehicleDocumentRepository):
     async def delete(self, entity_id: uuid.UUID) -> None:
         m = await self._session.get(VehicleDocumentModel, entity_id)
         if m:
-            await self._session.delete(m)
+            self._session.delete(m)
             await self._session.flush()
