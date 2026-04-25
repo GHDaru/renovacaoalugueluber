@@ -1,11 +1,12 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export const Header: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <div className="flex items-center space-x-2">
+        <Link to="/" className="flex items-center space-x-2">
           <div className="w-12 h-12 flex items-center justify-center border-2 border-navy transform rotate-45 overflow-hidden p-1">
             <span className="text-2xl font-black text-navy -rotate-45">R</span>
           </div>
@@ -13,7 +14,7 @@ export const Header: React.FC = () => {
             <span className="font-bold text-lg tracking-wider text-navy">RENOVAÇÃO</span>
             <span className="text-[10px] font-semibold text-gray-500 uppercase tracking-widest">Locação e Empreendimentos</span>
           </div>
-        </div>
+        </Link>
         
         <nav className="hidden md:flex space-x-8 font-semibold text-gray-600">
           <a href="#beneficios" className="hover:text-gold transition">Benefícios</a>
@@ -21,13 +22,21 @@ export const Header: React.FC = () => {
           <a href="#frota" className="hover:text-gold transition">Frota</a>
         </nav>
 
-        <a 
-          href="https://wa.me/5541992575775" 
-          target="_blank" 
-          className="bg-navy text-white px-6 py-2 rounded-full font-bold hover:bg-gray-800 transition shadow-lg hidden sm:block"
-        >
-          CONTATO
-        </a>
+        <div className="flex items-center space-x-3">
+          <Link
+            to="/login"
+            className="text-navy font-bold hover:text-gold transition hidden sm:block"
+          >
+            Entrar
+          </Link>
+          <a 
+            href="https://wa.me/5541992575775" 
+            target="_blank" 
+            className="bg-navy text-white px-6 py-2 rounded-full font-bold hover:bg-gray-800 transition shadow-lg hidden sm:block"
+          >
+            CONTATO
+          </a>
+        </div>
       </div>
     </header>
   );
