@@ -7,6 +7,7 @@ import LandingPage from './pages/LandingPage';
 import Login from './pages/auth/Login';
 import Dashboard from './pages/admin/Dashboard';
 import VehicleCosts from './pages/admin/VehicleCosts';
+import UserManagement from './pages/admin/UserManagement';
 import RegisterVehicle from './pages/owner/RegisterVehicle';
 import Register from './pages/renter/Register';
 import VehicleListing from './pages/marketplace/VehicleListing';
@@ -21,6 +22,7 @@ const App: React.FC = () => {
           <Route element={<PrivateRoute />}>
             <Route path="/admin/dashboard" element={<Dashboard />} />
             <Route path="/admin/vehicle-costs" element={<VehicleCosts />} />
+            <Route path="/admin/users" element={<UserManagement />} />
             <Route path="/owner/register-vehicle" element={<RegisterVehicle />} />
             <Route path="/renter/register" element={<Register />} />
             <Route path="/marketplace" element={<VehicleListing />} />

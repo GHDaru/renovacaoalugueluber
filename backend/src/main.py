@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from src.config import settings
 from src.shared.infrastructure.database import Base, engine
-from src.domains.auth.presentation.routes import router as auth_router
+from src.domains.auth.presentation.routes import router as auth_router, users_router
 from src.domains.owner.presentation.routes import router as owner_router
 from src.domains.vehicle.presentation.routes import router as vehicle_router
 from src.domains.renter.presentation.routes import router as renter_router
@@ -56,6 +56,7 @@ app.add_middleware(
 )
 
 app.include_router(auth_router, prefix="/api/v1")
+app.include_router(users_router, prefix="/api/v1")
 app.include_router(owner_router, prefix="/api/v1")
 app.include_router(vehicle_router, prefix="/api/v1")
 app.include_router(renter_router, prefix="/api/v1")
