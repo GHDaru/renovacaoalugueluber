@@ -1,3 +1,4 @@
+import logging
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -12,11 +13,21 @@ from src.domains.renter.presentation.routes import router as renter_router
 from src.domains.rental.presentation.routes import router as rental_router
 from src.domains.finance.presentation.routes import router as finance_router
 
+logger = logging.getLogger(__name__)
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    async with engine.begin() as conn:
-        await conn.run_sync(Base.metadata.create_all)
+    try:
+        async with engine.begin() as conn:
+            await conn.run_sync(Base.metadata.create_all)
+        logger.info("Database tables created / verified.")
+    except Exception as exc:
+        logger.error(
+            "Could not initialize database on startup: %s. "
+            "Check DATABASE_URL and ensure the database is reachable.",
+            exc,
+        )
     yield
 
 
