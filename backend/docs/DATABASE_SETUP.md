@@ -24,7 +24,7 @@
 | Ferramenta | Versão mínima | Observação |
 |------------|--------------|------------|
 | Python     | 3.11+        | `python --version` |
-| pip        | 23+          | `pip --version` |
+| uv         | 0.4+         | `uv --version` · [instalação](https://docs.astral.sh/uv/getting-started/installation/) |
 | Conta Neon | –            | <https://neon.tech> (plano free disponível) |
 
 ---
@@ -87,9 +87,9 @@ python -c "import secrets; print(secrets.token_hex(32))"
 
 ```bash
 cd backend
-python -m venv .venv
+uv venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 ```
 
 ---
@@ -269,8 +269,8 @@ vehicles (1) ──< vehicle_costs
 ```bash
 # ── Ambiente ──────────────────────────────────────────────────
 cd backend
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
+uv venv .venv && source .venv/bin/activate
+uv pip install -r requirements.txt
 
 # ── Configuração ──────────────────────────────────────────────
 cp .env.example .env
