@@ -1,10 +1,18 @@
 import React, { FormEvent, useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { UserRole } from '../../types';
+
+const defaultRedirect: Record<UserRole, string> = {
+  ADMIN: '/admin/dashboard',
+  OWNER: '/owner/register-vehicle',
+  RENTER: '/marketplace',
+};
 
 const Login: React.FC = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
@@ -15,10 +23,17 @@ const Login: React.FC = () => {
     setError(null);
     setLoading(true);
     try {
-      await login(email, password);
-      navigate('/admin/dashboard');
-    } catch {
-      setError('E-mail ou senha inválidos. Tente novamente.');
+      const loggedUser = await login(email, password);
+      const params = new URLSearchParams(location.search);
+      const next = params.get('next');
+      navigate(next ?? defaultRedirect[loggedUser.role]);
+    } catch (err) {
+      const status = (err as { response?: { status?: number } })?.response?.status;
+      if (status === 401) {
+        setError('E-mail ou senha inválidos. Tente novamente.');
+      } else {
+        setError('Erro ao conectar ao servidor. Verifique sua conexão.');
+      }
     } finally {
       setLoading(false);
     }

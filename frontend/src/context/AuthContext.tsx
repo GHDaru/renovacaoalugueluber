@@ -6,7 +6,7 @@ interface AuthContextValue {
   user: User | null;
   token: string | null;
   loading: boolean;
-  login: (email: string, password: string) => Promise<void>;
+  login: (email: string, password: string) => Promise<User>;
   logout: () => void;
 }
 
@@ -31,13 +31,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       .finally(() => setLoading(false));
   }, [token]);
 
-  const login = useCallback(async (email: string, password: string) => {
+  const login = useCallback(async (email: string, password: string): Promise<User> => {
     const res = await api.post<{ access_token: string; token_type: string }>('/auth/login', { email, password });
     const newToken = res.data.access_token;
     localStorage.setItem('access_token', newToken);
     setToken(newToken);
     const meRes = await api.get<User>('/auth/me');
     setUser(meRes.data);
+    return meRes.data;
   }, []);
 
   const logout = useCallback(() => {
